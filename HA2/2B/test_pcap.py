@@ -32,7 +32,7 @@ def exclude(chunks, sets):
     for i in chunks:
         interesting_sets = []
         for j in sets:
-            if not (len(set(i) & set(j)) == 0):
+            if (len(set(i) & set(j)) != 0):
                 interesting_sets.append(j)
         if len(interesting_sets) == 1:
             temp_list = list(set(interesting_sets[0]) & set(i))
@@ -79,10 +79,10 @@ def packets(nazir_ip,mix_ip):
 
     return interesting_chunks
 
-file_path = 'HA2/2B/cia.log.1339.pcap'
-nazir_ip = "161.53.13.37"
-mix_ip = "11.192.206.171"
-partners = 12
+file_path = 'HA2/2B/cia.log.1.pcap'
+nazir_ip = "35.146.13.37"
+mix_ip = "196.17.66.31"
+partners = 14
 
 testcap = open(file_path, 'rb')
 capfile = savefile.load_savefile(testcap, layers=2, verbose=True)
