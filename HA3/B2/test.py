@@ -1,7 +1,8 @@
 import numpy as np
 from pypoly import Polynomial
 
-def calculate_master(poly):
+def calculate_secret(poly):
+    #https://stackoverflow.com/questions/44471236/python-code-for-lagrange-interpolation-determining-the-equation-of-the-polynom
     equations = np.array([[index[0] ** i for i in range(len(poly))] for index in poly])
     values = np.array([index[1] for index in poly])
     coef = np.linalg.solve(equations, values)
@@ -20,7 +21,7 @@ def main():
     
     combined_shares = sum(p1_poly) + sum(received_shares)
     collabs.append([1,combined_shares])
-    calculate_master(collabs)
+    calculate_secret(collabs)
 
 
 
