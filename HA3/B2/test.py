@@ -1,6 +1,4 @@
 import numpy as np
-from pypoly import Polynomial
-#pip3 install PyPolynomial
 
 def main():
     #coeffs for p1

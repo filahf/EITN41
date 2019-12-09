@@ -11,8 +11,6 @@ def create_commit(v,k):
     return commit
 
 
-
-
 def conceal(trunc):
     k = random.randint(2 ** 15, 2 ** 16)
     ref_commit = create_commit(1,k)[2:trunc +2]
